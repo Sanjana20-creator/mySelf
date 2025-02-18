@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <style>
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div class="navbar">
+      <h1 class="logo">Portfolio</h1>
+      <center>
+        <ul>
+          <li><a href="#intro">HOME</a></li>
+          <li><a href="#mySkill">SKILLS</a></li>
+          <li><a href="#myAbout">ABOUT</a></li>
+          <li><a href="#Myproject">PROJECTS</a></li>
+        </ul>
+      </center>
+    </div>
+
+    <div class="info" id="intro">
+      <h2 id="userName">Hi, I'm Sanjana.</h2>
+      <h1 id="userProfession">Web Creator</h1>
+      <p id="userBio">
+        <h3>Web creator and developer from DYPSEM, Kolhapur<br>
+        I created this website to give info about me.<br>
+        I am a Computer Science Student at D.Y. Patil School of Engineering and Management.<br></h3>
+      </p>
+      <img id="userPhoto" class="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+    </div>
+
+    <div class="skills" id="mySkill"> 
+      <h3><li>Skills:</li></h3>
+      <p>
+        HTML<br><br>
+        CSS<br><br>
+        BOOTSTRAP<br><br>
+        JAVASCRIPT<br><br>
+      </p>
+      <hr>
+    </div>
+
+    <div class="about" id="myAbout">
+      <h3><li>About:</li></h3>
+        <p>
+          I am passionate about software development, AI, and scalable systems.<br>
+          I thrive on solving complex algorithmic problems and building efficient, high-performance applications.<br>
+          I have a strong foundation in Web Development, with hands-on experience in developing end-to-end projects that focus on innovation and real-world impact.<br>
+          I am actively seeking opportunities to grow as a software developer, contributing to high-impact projects, scalable architectures, and AI-driven applications.<br>
+          I am eager to collaborate with industry experts, apply my skills to real-world challenges, and continuously push the boundaries of technology.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="projects" id="Myproject">
+      <h3><li>Projects:</li></h3>
+        <p>
+          My achievements include securing 1st place in the Industrial Ideathon 2024,<br>
+          showcasing my ability to solve industry-level problems with creative solutions.<br>
+          I also created a website called 'VOTEEASE' to help voters with online voting.
+        </p>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+
+      const name = localStorage.getItem("name");
+      const profession = localStorage.getItem("profession");
+      const bio = localStorage.getItem("bio");
+      const photoUrl = localStorage.getItem("photoUrl");
+
+      console.log("Retrieved Data from localStorage:");
+      console.log("Name:", name);
+      console.log("Profession:", profession);
+      console.log("Bio:", bio);
+      console.log("Photo URL:", photoUrl);
+
+      if (name) {
+        document.getElementById("userName").textContent = `Hi, I'm ${name}.`;
+      }
+      if (profession) {
+        document.getElementById("userProfession").textContent = profession;
+      }
+      if (bio) {
+        document.getElementById("userBio").textContent = bio;
+      }
+      if (photoUrl) {
+        document.getElementById("userPhoto").src = photoUrl.placeholder="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid";
+      }
+    }
+  </script>
+
+</body>
+</html>

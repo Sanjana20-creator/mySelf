@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Bio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+      margin-top: 12%;
+    }
+    .bio-container {
+      border: 2px solid #0073e6;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      background-color: #ffffff;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #0073e6;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bio-container">
+    <h2 id="name">Hello, Guest!</h2>
+    <p id="profession">Your profession will appear here.</p>
+    <p id="bio">Your bio will appear here.</p>
+    <img id="profile-pic" src="https://via.placeholder.com/100" alt="Profile Picture">
+    <br><br>
+    <button onclick="collectInfo()">Enter Your Bio</button>
+    <button onclick="collectInfo()">Update Your Bio</button>
+  </div>
+
+  <script>
+    function collectInfo() {
+      let name = prompt("Enter your name:");
+      if (!name) {
+        alert("Name cannot be empty.");
+        return;
+      }
+
+      let profession = prompt("Enter your profession:");
+      if (!profession) {
+        alert("Profession cannot be empty.");
+        return;
+      }
+
+      let bio = prompt("Tell us something about yourself:");
+      if (!bio) {
+        alert("Bio cannot be empty.");
+        return;
+      }
+
+      let photoUrl = prompt("Enter the URL of your profile picture (optional):");
+      if (!photoUrl) {
+        photoUrl = "https://via.placeholder.com/100"; 
+      }
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("profession", profession);
+      localStorage.setItem("bio", bio);
+      localStorage.setItem("photoUrl", photoUrl);
+
+      console.log("Data saved to localStorage:");
+      console.log("Name:", name);
+      console.log("Profession:", profession);
+      console.log("Bio:", bio);
+      console.log("Photo URL:", photoUrl);
+
+
+      alert("Your information has been saved. You will now be redirected to your portfolio.");
+      window.location.href = "portfolio.html"; 
+    }
+  </script>
+
+</body>
+</html>
